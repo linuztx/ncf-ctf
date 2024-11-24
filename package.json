@@ -1,0 +1,12 @@
+{
+  "name": "ncf-tryout-platform",
+  "version": "1.0.0",
+  "description": "A beginner-friendly Capture The Flag (CTF) platform featuring 6 web-based challenges designed to teach basic cybersecurity concepts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
