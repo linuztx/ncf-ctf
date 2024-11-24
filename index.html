@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCF CTF Challenge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="bg-gradient-to-r from-gray-900 to-gray-800 p-4 sm:p-6 sticky top-0 z-50 shadow-xl">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div class="flex items-center space-x-2">
+                <svg class="w-8 h-8 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                </svg>
+                <h1 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">NCF CTF Challenge</h1>
+            </div>
+            <div class="flex items-center space-x-3 sm:space-x-6">
+                <span class="text-gray-300 text-sm sm:text-base">Progress:</span>
+                <div class="w-32 sm:w-40 bg-gray-700 rounded-full h-3 p-0.5">
+                    <div id="progress-bar" class="bg-gradient-to-r from-green-400 to-blue-500 rounded-full h-2 transition-all duration-500" style="width: 0%"></div>
+                </div>
+                <span id="progress-text" class="text-gray-300 font-mono text-sm sm:text-base">0/6</span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="mb-12 text-center">
+            <h2 class="text-5xl font-extrabold mb-6 relative inline-block">
+                <!-- Glitch effect background text -->
+                <span class="absolute top-0 left-0 -z-10 text-blue-500/10 blur-sm transform -translate-x-0.5 translate-y-0.5">Welcome Hacker!</span>
+                <!-- Main text with gradient -->
+                <span class="bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent font-mono tracking1-tight">Welcome Hacker!</span>
+            </h2>
+            
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                <span class="font-medium text-green-400">Test your skills</span> with these 
+                <span class="inline-block px-2 py-1 bg-gray-800 rounded-md text-green-400 font-mono">6</span> 
+                beginner-friendly challenges. 
+                <span class="block mt-2 text-cyan-400 font-medium">Can you capture all the flags?</span>
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
+            <!-- Challenge 1: Inspect Element -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge1">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 1: Code Detective</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Not everything is visible at first glance. Dive deeper into the page's secrets.</p>
+                        <a href="challenges/challenge1.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 2: JavaScript Console -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge2">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 2: Console Master</h3>
+                        <p class="text-gray-400 mb-4 text-sm">The flag is hiding in plain sight, but only developers can see it!</p>
+                        <a href="challenges/challenge2.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 3: Cookie Challenge -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge3">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 3: Cookie Monster</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Cookie Monster left a digital trail. Follow the crumbs to find the hidden flag!</p>
+                        <a href="challenges/challenge3.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 4: OSINT -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge4">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 4: GeoHunter</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Put your geography skills to the test. Every detail in the image is a potential clue.</p>
+                        <a href="challenges/challenge4.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 5: Steganography -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge5">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 5: StegoCrypt</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Not all images are what they seem. Uncover the message hidden within the pixels.</p>
+                        <a href="challenges/challenge5.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Challenge 6: Simple Cipher -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 rounded-xl p-6 hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 border border-gray-700 challenge-card relative overflow-hidden" data-challenge="challenge6">
+                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/10 to-blue-500/10 rounded-bl-full"></div>
+                <div class="flex items-start space-x-4">
+                    <div class="p-3 bg-gray-700/50 rounded-lg">
+                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-green-400 mb-2">Challenge 6: Decoder Ring</h3>
+                        <p class="text-gray-400 mb-4 text-sm">Ancient hackers left their message in Base64. Decipher the code to claim your flag!</p>
+                        <a href="challenges/challenge6.html" class="group inline-flex items-center gap-2 bg-gradient-to-r from-green-400 to-blue-500 text-white px-4 py-2 rounded-lg hover:from-green-500 hover:to-blue-600 transition-all duration-300 cursor-pointer select-none w-full sm:w-auto justify-center">
+                            <span class="relative z-10">Start Challenge</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform relative z-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-16 text-center">
+            <p class="text-sm font-medium bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 bg-clip-text text-transparent inline-flex items-center gap-2">
+                Created with 
+                <span class="relative inline-block">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-15"></span>
+                    <span class="relative">💚</span>
+                </span>
+                by 
+                <span class="font-mono tracking-wide">NCF CTF Team</span>
+            </p>
+        </footer>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
