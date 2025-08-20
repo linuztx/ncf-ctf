@@ -3,7 +3,7 @@ function showHint() {
     hint.classList.toggle('hidden');
 }
 
-function submitFlag(challenge) {
+async function submitFlag(challenge) {
     const input = document.querySelector(`[data-challenge="${challenge}"]`);
     const flag = input.value.trim();
     const button = input.nextElementSibling;
@@ -19,9 +19,11 @@ function submitFlag(challenge) {
         Checking...
     `;
 
-    // Simulate network delay
-    setTimeout(() => {
-        if (checkFlag(challenge, flag)) {
+    // Check flag via API
+    try {
+        const isCorrect = await checkFlag(challenge, flag);
+        
+        if (isCorrect) {
             showNotification('success', '🎉 Congratulations! You found the correct flag!');
             input.classList.add('success');
             input.disabled = true;
@@ -48,5 +50,12 @@ function submitFlag(challenge) {
             button.disabled = false;
             button.innerHTML = 'Submit Flag';
         }
-    }, 1000);
+    } catch (error) {
+        console.error('Error submitting flag:', error);
+        showNotification('error', '🔌 Connection error. Please ensure the backend server is running.');
+        
+        // Reset button
+        button.disabled = false;
+        button.innerHTML = 'Submit Flag';
+    }
 } 
