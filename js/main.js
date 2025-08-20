@@ -2,18 +2,35 @@
 let completedChallenges = JSON.parse(localStorage.getItem('completedChallenges')) || [];
 
 
-// Function to check flags
-function checkFlag(challenge, flag) {
-    const flags = {
-        'challenge1': 'NCF{1nsp3ct_3l3m3nt_pr0}',
-        'challenge2': 'NCF{c0ns0l3_m4st3r_2024}',
-        'challenge3': 'NCF{c00k13_m0nst3r}',
-        'challenge4': 'NCF{sweden}',
-        'challenge5': 'NCF{st3g0_m4st3r_2024}',
-        'challenge6': 'NCF{b4s64_d3c0d3r}'
-    };
+// Backend API configuration
+const API_BASE_URL = 'http://localhost:8000';
 
-    return flags[challenge].toLowerCase() === flag.toLowerCase();
+// Function to check flags via API
+async function checkFlag(challenge, flag) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/flags/verify`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                challenge: challenge,
+                flag: flag
+            })
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const result = await response.json();
+        return result.success;
+    } catch (error) {
+        console.error('Error verifying flag:', error);
+        // Fallback to showing an error message
+        showNotification('error', '🔌 Connection error. Please ensure the backend server is running.');
+        return false;
+    }
 }
 
 // Update UI to show completed challenges and progress
